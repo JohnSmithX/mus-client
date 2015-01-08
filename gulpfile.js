@@ -13,7 +13,7 @@ var concat = require('gulp-concat');
 gulp.task('browserify', function () {
   return gulp.src('./src/js/app.js')
     .pipe(browserify({transform: ['reactify']}))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest('./dist/js/'));
 });
@@ -21,7 +21,7 @@ gulp.task('browserify', function () {
 gulp.task('less', function () {
   gulp.src('./src/css/*.less')
     .pipe(less())
-    .pipe(minifycss())
+    //.pipe(minifycss())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./dist/css/'));
 
@@ -47,6 +47,8 @@ gulp.task('connect', function () {
 gulp.task('transform', function () {
   gulp.src('./src/index.html')
     .pipe(gulp.dest('./dist/'));
+  gulp.src('./src/lib/**')
+    .pipe(gulp.dest('./dist/lib/'))
 });
 
 
