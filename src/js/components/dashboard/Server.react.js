@@ -8,38 +8,42 @@ var React = require('react');
 
 var Semantify = require('react-semantify');
 var Card = Semantify.Card;
+var Progress = Semantify.Progress;
 
+var CheckBox = Semantify.Checkbox;
 
-//<a className="ui card" href="http://www.dog.com">
-//  <div className="content">
-//    <div className="header">Cute Dog</div>
-//    <div className="meta">
-//      <span className="category">Animals</span>
-//    </div>
-//    <div className="description">
-//      Click to view more information about this dog at dog.com
-//    </div>
+//<div class="ui toggle checkbox">
+//  <input type="checkbox" name="public">
+//    <label>Subscribe to weekly newsletter</label>
 //  </div>
-//  <div className="extra content">
-//    <div className="right floated author">
-//      <img className="ui avatar image" src="/images/avatar/small/matt.jpg"> Matt
-//      </div>
-//    </div>
-//  </a>
-
 var Server = React.createClass({
   render: function () {
+    var barStyle = {
+      "-webkit-transition": "300ms",
+      "transition": "300ms",
+      "width": "75%"
+    };
     return (
       <div className="server-card">
         <Card>
           <div className="content">
-            <div className="header">Cute Dog</div>
+            <div className="header">8080</div>
             <div className="meta">
-              <span className="category">Animals</span>
+              <span className="category">runing</span>
             </div>
-            <div className="description">
-              Click to view more information about this dog at dog.com
-            </div>
+            <Progress className="green small" percent={75}>
+              <div className="bar" style={barStyle}>
+                <div className="progress">75%</div>
+              </div>
+            </Progress>
+            <CheckBox className="toggle checked">
+              <input type="checkbox" nameName="public"/>
+              <label>Subscribe to weekly newsletter</label>
+            </CheckBox>
+            <CheckBox className="toggle checked">
+              <input type="checkbox" nameName="public"/>
+              <label>Subscribe to weekly newsletter</label>
+            </CheckBox>
           </div>
         </Card>
       </div>

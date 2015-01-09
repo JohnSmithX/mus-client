@@ -39,7 +39,7 @@ var Main = React.createClass({
           <Grid className="three column stackable">
             <Row className="computer only">
               <Column className="four wide">
-                <LeftMenu mobile="vertical pointing"/>
+                <LeftMenu mobile="vertical"/>
               </Column>
               <Column className="nine wide">
                 <ServerList/>

@@ -28,8 +28,8 @@ var LeftMenu = React.createClass({
   render: function () {
     var servers = (
       <Item className="active">
-        <Icon className="list layout"/>
-      servers
+        <Icon className="block layout"/>
+        servers
       </Item>
     );
 
