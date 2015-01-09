@@ -1,0 +1,17 @@
+{
+  "name": "angular-study",
+  "version": "0.0.1",
+  "authors": "xus",
+  "main": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    ".idea"
+  ],
+  "dependencies": {
+    "semantic": "~0.9.1"
+  }
+}

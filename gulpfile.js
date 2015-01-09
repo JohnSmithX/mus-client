@@ -2,7 +2,11 @@
  * Created by xus on 14-12-30.
  */
 var gulp = require('gulp');
-var browserify = require('gulp-browserify');
+var browserify = require('browserify');
+var reactify = require('reactify');
+
+var source = require('vinyl-source-stream');
+
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var connect = require('gulp-connect');
@@ -11,10 +15,11 @@ var minifycss = require('gulp-minify-css');
 var concat = require('gulp-concat');
 
 gulp.task('browserify', function () {
-  return gulp.src('./src/js/app.js')
-    .pipe(browserify({transform: ['reactify']}))
-    .pipe(uglify())
-    .pipe(rename({suffix: ".min"}))
+  var b = browserify();
+  b.transform(reactify);
+  b.add('./src/js/app.js');
+  return b.bundle()
+    .pipe(source('main.js'))
     .pipe(gulp.dest('./dist/js/'));
 });
 
@@ -47,6 +52,8 @@ gulp.task('connect', function () {
 gulp.task('transform', function () {
   gulp.src('./src/index.html')
     .pipe(gulp.dest('./dist/'));
+  gulp.src('./src/lib/**')
+    .pipe(gulp.dest('./dist/lib/'));
 });
 
 

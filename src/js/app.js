@@ -1,8 +1,11 @@
+'use strict';
+
 var React = require('react');
 
-var App = require('./components/App.react');
+var Layout = require('./components/Layout.react');
+
 
 React.render(
-  <App />,
-  document.getElementById('todoapp')
+  <Layout/>,
+  document.getElementById('mus')
 );
