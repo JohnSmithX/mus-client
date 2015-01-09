@@ -16,19 +16,23 @@ var BottomProg = require('./BottomProg.react');
 var Nav = React.createClass({
   render: function () {
     var home = (
-      <Item>
-        <Icon className="home"/>
+      <Item className="title">
         Home
       </Item>
     );
     return (
       <div className="navbar">
+
         <Menu
-          id="top-menu"
-          className="main"
-          children={[home]}
-        />
-        <BottomProg/>
+        className="main"
+        >
+          <div className="container">
+            {home}
+          </div>
+          <BottomProg/>
+        </Menu>
+
+
       </div>
 
 

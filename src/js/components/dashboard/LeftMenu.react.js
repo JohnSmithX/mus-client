@@ -43,7 +43,7 @@ var LeftMenu = React.createClass({
     var settings = (
       <Item>
         <Icon className="settings"/>
-        setting
+        settings
       </Item>
 
     );
@@ -52,7 +52,7 @@ var LeftMenu = React.createClass({
     return (
       <div className="left-menu">
         <Menu
-          className="vertical pointing"
+          className={this.props.mobile}
           children={[servers, charts, settings]}
         />
       </div>

@@ -7,6 +7,6 @@ var Layout = require('./components/Layout.react');
 
 React.render(
   <Layout/>,
-  document.getElementById('mus')
+  document.body
 );
 

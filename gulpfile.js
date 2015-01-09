@@ -20,8 +20,8 @@ gulp.task('browserify', function () {
   b.transform(reactify);
   b.add('./src/js/app.js');
   return b.bundle()
-    .pipe(source('main.js'))
-
+    .pipe(source('app.js'))
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./dist/js/'));
 });
 
