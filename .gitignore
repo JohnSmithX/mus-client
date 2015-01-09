@@ -48,7 +48,7 @@ Icon
 # Bower components
 /src/bower_components
 /src/js/bundled.js
-
+/src/lib/
 #ide
 /.idea
 
